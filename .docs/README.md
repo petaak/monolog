@@ -26,6 +26,7 @@ monolog:
     hook:
       fromTracy: true # enabled by default, log through Tracy into Monolog
       toTracy: true # enabled by default, log through Monolog into Tracy
+      lazyTracy: true # enabled by default, lazy loading magic
     channel:
         default: # default channel is required
             handlers:
@@ -111,6 +112,7 @@ It add into message info about which class (or file) called LoggerHolder for eas
 monolog:
     holder:
         enabled: false # disabled by default
+        lazy: true # enabled by default, lazy loading magic
 ```
 
 ```php
