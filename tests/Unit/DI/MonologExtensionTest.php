@@ -10,7 +10,7 @@ use Nette\DI\Container;
 use Nette\DI\ContainerLoader;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
-use Tests\Contributte\Monolog\NeonLoader;
+use Tests\Contributte\Monolog\Toolkit\NeonLoader;
 
 class MonologExtensionTest extends TestCase
 {
