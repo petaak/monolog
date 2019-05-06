@@ -4,8 +4,9 @@ namespace Contributte\Monolog\DI;
 
 use Contributte\Monolog\Exception\Logic\InvalidArgumentException;
 use Contributte\Monolog\Exception\Logic\InvalidStateException;
-use Contributte\Monolog\LazyLoggerManager;
-use Contributte\Monolog\LoggerManager;
+use Contributte\Monolog\Manager\LazyLoggerManager;
+use Contributte\Monolog\Manager\LoggerManager;
+use Contributte\Monolog\Manager\SimpleLoggerManager;
 use Contributte\Monolog\Tracy\LazyTracyLogger;
 use Monolog\Handler\PsrHandler;
 use Monolog\Logger;
@@ -56,12 +57,13 @@ class MonologExtension extends CompilerExtension
 		}
 
 		if ($config['manager']['enabled']) {
-			$manager = $builder->addDefinition($this->prefix('manager'));
+			$manager = $builder->addDefinition($this->prefix('manager'))
+				->setType(LoggerManager::class);
 
 			if ($config['manager']['lazy']) {
 				$manager->setFactory(LazyLoggerManager::class, ['prefix' => $this->prefix('logger')]);
 			} else {
-				$manager->setFactory(LoggerManager::class);
+				$manager->setFactory(SimpleLoggerManager::class);
 			}
 		}
 

@@ -1,12 +1,12 @@
 <?php declare(strict_types = 1);
 
-namespace Contributte\Monolog;
+namespace Contributte\Monolog\Manager;
 
 use Contributte\Monolog\Exception\Logic\InvalidStateException;
 use Monolog\Logger;
 use Psr\Log\LoggerInterface;
 
-class LoggerManager implements ILoggerManager
+class SimpleLoggerManager implements LoggerManager
 {
 
 	/** @var Logger[] */

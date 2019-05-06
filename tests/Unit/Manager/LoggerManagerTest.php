@@ -1,21 +1,21 @@
 <?php declare(strict_types = 1);
 
-namespace Tests\Contributte\Monolog;
+namespace Tests\Contributte\Monolog\Unit\Manager;
 
 use Contributte\Monolog\Exception\Logic\InvalidStateException;
-use Contributte\Monolog\LoggerManager;
+use Contributte\Monolog\Manager\SimpleLoggerManager;
 use Monolog\Logger;
 use PHPUnit\Framework\TestCase;
 
 class LoggerManagerTest extends TestCase
 {
 
-	/** @var LoggerManager */
+	/** @var SimpleLoggerManager */
 	private $manager;
 
 	protected function setUp(): void
 	{
-		$this->manager = new LoggerManager();
+		$this->manager = new SimpleLoggerManager();
 	}
 
 	public function testHas(): void

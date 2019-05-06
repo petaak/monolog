@@ -1,10 +1,10 @@
 <?php declare(strict_types = 1);
 
-namespace Contributte\Monolog;
+namespace Contributte\Monolog\Manager;
 
 use Psr\Log\LoggerInterface;
 
-interface ILoggerManager
+interface LoggerManager
 {
 
 	public function has(string $name): bool;

@@ -80,15 +80,15 @@ monolog:
 ```
 
 ```php
-use Contributte\Monolog\ILoggerManager;
+use Contributte\Monolog\Manager\LoggerManager;
 
 class ExampleService
 {
 
-    /** @var ILoggerManager **/
+    /** @var LoggerManager **/
     private $loggerManager;
 
-    public function injectLoggerManager(ILoggerManager $loggerManager): void
+    public function injectLoggerManager(LoggerManager $loggerManager): void
     {
         $this->loggerManager = $loggerManager;
     }
@@ -96,7 +96,7 @@ class ExampleService
     public function doSomething(): void
     {
         $this->loggerManager->get('default')->info('Log that application did something');
-        $this->loggerManager->get('specialLogger')->info('Log something very special')
+        $this->loggerManager->get('specialLogger')->info('Log something very special');
     }
 
 }

@@ -1,12 +1,12 @@
 <?php declare(strict_types = 1);
 
-namespace Contributte\Monolog;
+namespace Contributte\Monolog\Manager;
 
 use Contributte\Monolog\Exception\Logic\InvalidStateException;
 use Nette\DI\Container;
 use Psr\Log\LoggerInterface;
 
-class LazyLoggerManager implements ILoggerManager
+class LazyLoggerManager implements LoggerManager
 {
 
 	/** @var Container */
