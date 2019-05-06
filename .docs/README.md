@@ -116,7 +116,7 @@ monolog:
 ```
 
 ```php
-use Contributte\Monolog\LoggerHolder;
+use Contributte\Monolog\Holder\LoggerHolder;
 
 class VerySpecialClassWithoutDependencyInjectionContainerAvailable
 {
