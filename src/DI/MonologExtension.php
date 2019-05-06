@@ -173,7 +173,7 @@ class MonologExtension extends CompilerExtension
 		}
 
 		if ($config['holder']['enabled']) {
-			if ($config['holder']['lazy']) { //TODO - implement LazyLoggerHolder
+			if ($config['holder']['lazy']) {
 				$initialize->addBody('Contributte\Monolog\Holder\LazyLoggerHolder::setLogger($this->getByType(?));', [$this->prefix('logger.default'), Container::class]);
 			} else {
 				$initialize->addBody('Contributte\Monolog\Holder\SimpleLoggerHolder::setLogger($this->getByType(?));', [Logger::class]);
