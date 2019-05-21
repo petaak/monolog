@@ -50,14 +50,10 @@ class TracyAdapter extends Logger
 	 */
 	private function psrLog($value, string $priority): void
 	{
+		$message = parent::formatMessage($value);
 		if ($value instanceof Throwable) {
-			$message = $value->getMessage();
 			$context = ['exception' => $value];
-		} elseif (!is_string($value)) {
-			$message = trim(Dumper::toText($value));
-			$context = [];
 		} else {
-			$message = $value;
 			$context = [];
 		}
 		$this->psrLogger->log(
